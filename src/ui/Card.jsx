@@ -1,12 +1,15 @@
+import { useAdvice } from "../hooks/useAdvice";
+
 function Card() {
+  const { id, advice, isLoading, getAdvice } = useAdvice();
+
   return (
     <main className="flex flex-col justify-center items-center gap-8 pt-8 rounded-[0.625rem] w-[90vw] sm:w-[35vw] bg-[var(--dark-greyish-blue)]">
       <h1 className=" uppercase text-[var(--neon-green)] tracking-[0.21606rem] sm:tracking-[0.25538rem] sm:text-[0.8125rem] text-[0.6875rem]">
-        Advice {`#117`}
+        {isLoading ? "" : `Advice #${id}`}
       </h1>
       <p className="text-2xl sm:text-[1.75rem] text-center px-5 sm:px-8 -tracking-[0.01606rem] sm:-tracking-[0.01875rem]">
-        “It is easy to sit up and take notice, what's difficult is getting up
-        and taking action.”
+        {isLoading ? "Loading..." : advice}
       </p>
       <svg
         width="295"
@@ -28,7 +31,10 @@ function Card() {
         className="hidden sm:block max-w-[30vw]"
       />
 
-      <div className="grid grid-cols-[1fr_2rem_2rem_1fr] h-[2rem] w-[90vw] cursor-pointer ">
+      <div
+        className="grid grid-cols-[1fr_2rem_2rem_1fr] h-[2rem] w-[90vw] cursor-pointer"
+        onClick={getAdvice}
+      >
         <div className="rounded-full w-[4rem] h-[4rem] bg-[var(--neon-green)] col-start-2 col-span-2 flex justify-center items-center hover:shadow-[0px_0px_40px_0px_var(--neon-green)]">
           <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <path
