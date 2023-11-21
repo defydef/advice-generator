@@ -25,13 +25,15 @@ Users should be able to:
 
 ### Screenshot
 
+Desktop view
 ![Desktop view](./public/screenshots/desktop-view.png)
+Mobile view
 ![Mobile view](./public/screenshots/mobile-view.png)
 
 ### Links
 
 - Solution URL: [Github](https://github.com/defydef/advice-generator)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Vercel](https://advice-generator-defydef.vercel.app/)
 
 ## My process
 
