@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: "Manrope", sans-serif;
   background-color: var(--dark-blue);

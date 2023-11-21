@@ -1,5 +1,7 @@
+import Card from "./ui/Card";
+
 function App() {
-  return <div>test</div>;
+  return <Card />;
 }
 
 export default App;
