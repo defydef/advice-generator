@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useAdvice } from "../hooks/useAdvice";
 
 function Card() {
