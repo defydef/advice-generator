@@ -8,11 +8,12 @@ export function useAdvice() {
   );
   const [id, setId] = useState("117");
   const [isLoading, setIsLoading] = useState("");
-  const [isInitialLoading, setIsInitialLoading] = useState(true);
+  // const [isInitialLoading, setIsInitialLoading] = useState(true);
 
   async function getAdvice() {
     try {
-      !isInitialLoading && setIsLoading(true);
+      // !isInitialLoading && setIsLoading(true);
+      setIsLoading(true);
       const res = await fetch(API_URL);
       if (!res.ok) throw Error();
       const { slip } = await res.json();
@@ -25,15 +26,15 @@ export function useAdvice() {
     }
   }
 
-  useEffect(function () {
-    const controller = new AbortController();
-    getAdvice();
-    setIsInitialLoading(false);
+  // useEffect(function () {
+  //   const controller = new AbortController();
+  //   getAdvice();
+  //   setIsInitialLoading(false);
 
-    //cleanup function
-    return function () {
-      controller.abort();
-    };
-  }, []);
-  return { id, advice, isLoading, getAdvice, isInitialLoading };
+  //   //cleanup function
+  //   return function () {
+  //     controller.abort();
+  //   };
+  // }, []);
+  return { id, advice, isLoading, getAdvice };
 }
